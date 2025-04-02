@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-mongoose.connect('mongodb://127.0.0.1:27017/tiktalk_db', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('✅ Connected to MongoDB at localhost:27017'))
+mongoose.connect('mongodb+srv://eidentieng:password2434@tiktalkdb.r3ho1qq.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('✅ Connected to MongoDB at mongodb+srv://eidentieng:password2434@tiktalkdb.r3ho1qq.mongodb.net/'))
     .catch(err => {
         console.error('❌ MongoDB Connection Error:', err);
         process.exit(1);
