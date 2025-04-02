@@ -180,7 +180,7 @@ server.post('/register', async (req, res) => {
         console.log('New user registered:', newUser); // Log the new user object
         req.session.userId = newUser._id;  
 
-        res.redirect('/profile');
+        res.redirect('/Profile');
     } catch (err) {
         console.error(err);
         res.status(500).send("Internal Server Error");
@@ -202,14 +202,14 @@ server.post('/login', async (req, res) => {
         }
 
         req.session.userId = user._id;  
-        res.redirect('/profile');
+        res.redirect('/Profile');
     } catch (err) {
         console.error(err);
         res.status(500).send("Internal Server Error");
     }
 });
 
-server.get('/profile', async (req, res) => {
+server.get('/Profile', async (req, res) => {
     if (!req.session.userId) {
         return res.redirect('/login');
     }
@@ -472,7 +472,7 @@ server.post('/settings', async (req, res) => {
         user.userTag = `u/${newUsername}`;
         await user.save();
 
-        res.redirect('/profile');
+        res.redirect('/Profile');
     } catch (err) {
         console.error(err);
         res.status(500).send("Internal Server Error");
