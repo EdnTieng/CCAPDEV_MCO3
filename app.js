@@ -229,7 +229,7 @@ server.get('/Profile', async (req, res) => {
             return res.redirect('/login');
         }
 
-        res.render('profile', { userProfile: user });
+        res.render('Profile', { userProfile: user });
     } catch (err) {
         console.error(err);
         res.status(500).send("Internal Server Error");
